@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bossList>
+	<boss>
+		<name>怨灵嗜魂者</name>
+		<id>10001</id>
+		<aliveFlag>true</aliveFlag>
+		<hp>1500</hp>
+		<ack>10</ack>
+		<award>101,102,1</award>
+		<money>1000</money>
+		<skill>9</skill>
+	</boss>
+	<boss>
+		<name>九辰天蛰</name>
+		<id>10002</id>
+		<aliveFlag>true</aliveFlag>
+		<hp>8000</hp>
+		<ack>200</ack>
+		<award>101,102,1</award>
+		<money>3000</money>
+		<skill>4</skill>
+	</boss>
+	<boss>
+		<name>小boss</name>
+		<id>10003</id>
+		<aliveFlag>true</aliveFlag>
+		<hp>10000</hp>
+		<ack>200</ack>
+		<award>101,102,1</award>
+		<money>3000</money>
+		<skill>9</skill>
+	</boss>
+	<boss>
+		<name>大boss</name>
+		<id>10004</id>
+		<aliveFlag>true</aliveFlag>
+		<hp>10000</hp>
+		<ack>200</ack>
+		<award>101,102,1</award>
+		<money>3000</money>
+		<skill>9</skill>
+	</boss>
+	<boss>
+		<name>究极boss</name>
+		<id>10005</id>
+		<aliveFlag>true</aliveFlag>
+		<hp>30000</hp>
+		<ack>500</ack>
+		<award>101,102,1</award>
+		<money>3000</money>
+		<skill>4</skill>
+	</boss>
+</bossList>

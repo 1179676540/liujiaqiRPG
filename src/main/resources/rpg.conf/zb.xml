@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zbList>
+	<zb>
+		<id>101</id>
+		<level>1</level>
+		<name>屠龙刀</name>
+		<type>1</type>
+		<attribute>100</attribute>
+		<price>1000</price>
+		<njd>60</njd>
+	</zb>
+	<zb>
+		<id>102</id>
+		<level>1</level>
+		<name>倚天剑</name>
+		<type>1</type>
+		<attribute>200</attribute>
+		<price>2000</price>
+		<njd>200</njd>
+	</zb>
+	<zb>
+		<id>103</id>
+		<level>1</level>
+		<name>天空铠甲</name>
+		<type>2</type>
+		<attribute>200</attribute>
+		<price>1000</price>
+		<njd>200</njd>
+	</zb>
+	<zb>
+		<id>104</id>
+		<level>5</level>
+		<name>绝世好剑</name>
+		<type>1</type>
+		<attribute>1000</attribute>
+		<price>10000</price>
+		<njd>200</njd>
+	</zb>
+	<zb>
+		<id>105</id>
+		<level>5</level>
+		<name>妖刀村正</name>
+		<type>1</type>
+		<attribute>1000</attribute>
+		<price>10000</price>
+		<njd>200</njd>
+	</zb>
+</zbList>

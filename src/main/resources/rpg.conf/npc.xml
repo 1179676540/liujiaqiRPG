@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<npcList>
+	<npc>
+		<name>杂货老板</name>
+		<id>1001</id>
+		<msg>hey,小伙子,欢迎杂货店</msg>
+		<taskid>1</taskid>
+	</npc>
+	<npc>
+		<name>武器老板</name>
+		<id>1002</id>
+		<msg>欢迎光临武器店,十八般武器任你挑</msg>
+		<taskid>13</taskid>
+	</npc>
+</npcList>

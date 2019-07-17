@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<buffList>
+	<buff>
+		<id>1</id>
+		<name>回蓝buff</name>
+		<mp>5</mp>
+		<lastedTime>6000</lastedTime>
+	</buff>
+	<buff>
+		<id>2</id>
+		<name>中毒buff</name>
+		<mp>10</mp>
+		<lastedTime>5000</lastedTime>
+	</buff>
+	<buff>
+		<id>3</id>
+		<name>护盾buff</name>
+		<mp>1</mp>
+		<lastedTime>5000</lastedTime>
+	</buff>
+	<buff>
+		<id>4</id>
+		<name>打晕buff</name>
+		<mp>1</mp>
+		<lastedTime>1000</lastedTime>
+	</buff>
+	<buff>
+		<id>5</id>
+		<name>小狼攻击</name>
+		<mp>10</mp>
+		<lastedTime>99999999</lastedTime>
+	</buff>
+	<buff>
+		<id>6</id>
+		<name>嘲讽buff</name>
+		<mp>1</mp>
+		<lastedTime>5000</lastedTime>
+	</buff>
+	<buff>
+		<id>7</id>
+		<name>回血</name>
+		<mp>500</mp>
+		<lastedTime>3000</lastedTime>
+	</buff>
+</buffList>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<enhanceList>
+	<enhance>
+		<id>2</id>
+		<succesRate>5000</succesRate>
+		<money>1000</money>
+	</enhance>
+	<enhance>
+		<id>3</id>
+		<succesRate>4000</succesRate>
+		<money>2000</money>
+	</enhance>
+	<enhance>
+		<id>4</id>
+		<succesRate>2000</succesRate>
+		<money>3000</money>
+	</enhance>
+	<enhance>
+		<id>5</id>
+		<succesRate>2000</succesRate>
+		<money>3000</money>
+	</enhance>
+	<enhance>
+		<id>6</id>
+		<succesRate>1000</succesRate>
+		<money>3000</money>
+	</enhance>
+	<enhance>
+		<id>7</id>
+		<succesRate>900</succesRate>
+		<money>3000</money>
+	</enhance>
+	<enhance>
+		<id>8</id>
+		<succesRate>800</succesRate>
+		<money>3000</money>
+	</enhance>
+	<enhance>
+		<id>9</id>
+		<succesRate>100</succesRate>
+		<money>3000</money>
+	</enhance>
+	<enhance>
+		<id>10</id>
+		<succesRate>10</succesRate>
+		<money>3000</money>
+	</enhance>
+</enhanceList>

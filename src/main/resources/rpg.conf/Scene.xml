@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sceneList>
+	<scene>
+		<name>起始之地</name>
+		<id>1</id>
+		<npc>1001</npc>
+		<monster>1</monster>
+		<near>2</near>
+	</scene>
+	<scene>
+		<name>村子</name>
+		<id>2</id>
+		<npc>1001,1002</npc>
+		<monster>1,2</monster>
+		<near>1,3,4</near>
+	</scene>
+	<scene>
+		<name>森林</name>
+		<id>3</id>
+		<npc>1001</npc>
+		<monster>1</monster>
+		<near>2</near>
+	</scene>
+	<scene>
+		<name>城堡</name>
+		<id>4</id>
+		<npc>1001</npc>
+		<monster>1</monster>
+		<near>2</near>
+	</scene>
+</sceneList>

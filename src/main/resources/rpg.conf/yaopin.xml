@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<yaopinList>
+	<yaopin>
+		<id>1</id>
+		<name>蓝药</name>
+		<buff>1</buff>
+		<price>10</price>
+	</yaopin>
+</yaopinList>

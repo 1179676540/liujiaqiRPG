@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="rpg.data.dao.GhstoreMapper" >
+  <resultMap id="BaseResultMap" type="rpg.pojo.Ghstore" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="gzid" property="gzid" jdbcType="INTEGER" />
+    <result column="wpid" property="wpid" jdbcType="INTEGER" />
+    <result column="number" property="number" jdbcType="INTEGER" />
+    <result column="njd" property="njd" jdbcType="INTEGER" />
+    <result column="isadd" property="isadd" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, gzid, wpid, number, njd, isadd
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="rpg.pojo.GhstoreExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ghstore
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="rpg.pojo.GhstoreExample" >
+    delete from ghstore
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="rpg.pojo.Ghstore" >
+    insert into ghstore (id, gzid, wpid, 
+      number, njd, isadd)
+    values (#{id,jdbcType=INTEGER}, #{gzid,jdbcType=INTEGER}, #{wpid,jdbcType=INTEGER}, 
+      #{number,jdbcType=INTEGER}, #{njd,jdbcType=INTEGER}, #{isadd,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="rpg.pojo.Ghstore" >
+    insert into ghstore
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="gzid != null" >
+        gzid,
+      </if>
+      <if test="wpid != null" >
+        wpid,
+      </if>
+      <if test="number != null" >
+        number,
+      </if>
+      <if test="njd != null" >
+        njd,
+      </if>
+      <if test="isadd != null" >
+        isadd,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="gzid != null" >
+        #{gzid,jdbcType=INTEGER},
+      </if>
+      <if test="wpid != null" >
+        #{wpid,jdbcType=INTEGER},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=INTEGER},
+      </if>
+      <if test="njd != null" >
+        #{njd,jdbcType=INTEGER},
+      </if>
+      <if test="isadd != null" >
+        #{isadd,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="rpg.pojo.GhstoreExample" resultType="java.lang.Integer" >
+    select count(*) from ghstore
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ghstore
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.gzid != null" >
+        gzid = #{record.gzid,jdbcType=INTEGER},
+      </if>
+      <if test="record.wpid != null" >
+        wpid = #{record.wpid,jdbcType=INTEGER},
+      </if>
+      <if test="record.number != null" >
+        number = #{record.number,jdbcType=INTEGER},
+      </if>
+      <if test="record.njd != null" >
+        njd = #{record.njd,jdbcType=INTEGER},
+      </if>
+      <if test="record.isadd != null" >
+        isadd = #{record.isadd,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ghstore
+    set id = #{record.id,jdbcType=INTEGER},
+      gzid = #{record.gzid,jdbcType=INTEGER},
+      wpid = #{record.wpid,jdbcType=INTEGER},
+      number = #{record.number,jdbcType=INTEGER},
+      njd = #{record.njd,jdbcType=INTEGER},
+      isadd = #{record.isadd,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

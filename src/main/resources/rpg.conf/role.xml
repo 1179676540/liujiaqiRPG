@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<roleList>
+	<role>
+		<id>1</id>
+		<name>战士</name>
+	</role>
+	<role>
+		<id>2</id>
+		<name>牧师</name>
+	</role>
+	<role>
+		<id>3</id>
+		<name>法师</name>
+	</role>
+	<role>
+		<id>4</id>
+		<name>召唤师</name>
+	</role>
+</roleList>

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="rpg.data.dao.MarketItemMapper" >
+  <resultMap id="BaseResultMap" type="rpg.pojo.MarketItem" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="ownername" property="ownername" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="oldprice" property="oldprice" jdbcType="INTEGER" />
+    <result column="newprice" property="newprice" jdbcType="INTEGER" />
+    <result column="gid" property="gid" jdbcType="INTEGER" />
+    <result column="njd" property="njd" jdbcType="INTEGER" />
+    <result column="enhance" property="enhance" jdbcType="INTEGER" />
+    <result column="time" property="time" jdbcType="BIGINT" />
+    <result column="auctioner" property="auctioner" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, name, ownername, type, oldprice, newprice, gid, njd, enhance, time, auctioner
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="rpg.pojo.MarketItemExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from marketitem
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from marketitem
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from marketitem
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="rpg.pojo.MarketItemExample" >
+    delete from marketitem
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="rpg.pojo.MarketItem" >
+    insert into marketitem (id, name, ownername, 
+      type, oldprice, newprice, 
+      gid, njd, enhance, 
+      time, auctioner)
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{ownername,jdbcType=VARCHAR}, 
+      #{type,jdbcType=INTEGER}, #{oldprice,jdbcType=INTEGER}, #{newprice,jdbcType=INTEGER}, 
+      #{gid,jdbcType=INTEGER}, #{njd,jdbcType=INTEGER}, #{enhance,jdbcType=INTEGER}, 
+      #{time,jdbcType=BIGINT}, #{auctioner,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="rpg.pojo.MarketItem" >
+    insert into marketitem
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="ownername != null" >
+        ownername,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="oldprice != null" >
+        oldprice,
+      </if>
+      <if test="newprice != null" >
+        newprice,
+      </if>
+      <if test="gid != null" >
+        gid,
+      </if>
+      <if test="njd != null" >
+        njd,
+      </if>
+      <if test="enhance != null" >
+        enhance,
+      </if>
+      <if test="time != null" >
+        time,
+      </if>
+      <if test="auctioner != null" >
+        auctioner,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="ownername != null" >
+        #{ownername,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="oldprice != null" >
+        #{oldprice,jdbcType=INTEGER},
+      </if>
+      <if test="newprice != null" >
+        #{newprice,jdbcType=INTEGER},
+      </if>
+      <if test="gid != null" >
+        #{gid,jdbcType=INTEGER},
+      </if>
+      <if test="njd != null" >
+        #{njd,jdbcType=INTEGER},
+      </if>
+      <if test="enhance != null" >
+        #{enhance,jdbcType=INTEGER},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=BIGINT},
+      </if>
+      <if test="auctioner != null" >
+        #{auctioner,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="rpg.pojo.MarketItemExample" resultType="java.lang.Integer" >
+    select count(*) from marketitem
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update marketitem
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ownername != null" >
+        ownername = #{record.ownername,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        type = #{record.type,jdbcType=INTEGER},
+      </if>
+      <if test="record.oldprice != null" >
+        oldprice = #{record.oldprice,jdbcType=INTEGER},
+      </if>
+      <if test="record.newprice != null" >
+        newprice = #{record.newprice,jdbcType=INTEGER},
+      </if>
+      <if test="record.gid != null" >
+        gid = #{record.gid,jdbcType=INTEGER},
+      </if>
+      <if test="record.njd != null" >
+        njd = #{record.njd,jdbcType=INTEGER},
+      </if>
+      <if test="record.enhance != null" >
+        enhance = #{record.enhance,jdbcType=INTEGER},
+      </if>
+      <if test="record.time != null" >
+        time = #{record.time,jdbcType=BIGINT},
+      </if>
+      <if test="record.auctioner != null" >
+        auctioner = #{record.auctioner,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update marketitem
+    set id = #{record.id,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      ownername = #{record.ownername,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=INTEGER},
+      oldprice = #{record.oldprice,jdbcType=INTEGER},
+      newprice = #{record.newprice,jdbcType=INTEGER},
+      gid = #{record.gid,jdbcType=INTEGER},
+      njd = #{record.njd,jdbcType=INTEGER},
+      enhance = #{record.enhance,jdbcType=INTEGER},
+      time = #{record.time,jdbcType=BIGINT},
+      auctioner = #{record.auctioner,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="rpg.pojo.MarketItem" >
+    update marketitem
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="ownername != null" >
+        ownername = #{ownername,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="oldprice != null" >
+        oldprice = #{oldprice,jdbcType=INTEGER},
+      </if>
+      <if test="newprice != null" >
+        newprice = #{newprice,jdbcType=INTEGER},
+      </if>
+      <if test="gid != null" >
+        gid = #{gid,jdbcType=INTEGER},
+      </if>
+      <if test="njd != null" >
+        njd = #{njd,jdbcType=INTEGER},
+      </if>
+      <if test="enhance != null" >
+        enhance = #{enhance,jdbcType=INTEGER},
+      </if>
+      <if test="time != null" >
+        time = #{time,jdbcType=BIGINT},
+      </if>
+      <if test="auctioner != null" >
+        auctioner = #{auctioner,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="rpg.pojo.MarketItem" >
+    update marketitem
+    set name = #{name,jdbcType=VARCHAR},
+      ownername = #{ownername,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
+      oldprice = #{oldprice,jdbcType=INTEGER},
+      newprice = #{newprice,jdbcType=INTEGER},
+      gid = #{gid,jdbcType=INTEGER},
+      njd = #{njd,jdbcType=INTEGER},
+      enhance = #{enhance,jdbcType=INTEGER},
+      time = #{time,jdbcType=BIGINT},
+      auctioner = #{auctioner,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
