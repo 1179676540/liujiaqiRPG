@@ -1,6 +1,5 @@
 package rpg.service.login;
 
-import java.awt.event.ItemEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -9,14 +8,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import rpg.configure.RoleType;
-import rpg.core.ThreadResource;
 import rpg.data.dao.AccountMapper;
 import rpg.data.dao.MarketItemMapper;
 import rpg.data.dao.UserMapper;
 import rpg.data.dao.UserbagMapper;
 import rpg.data.dao.UserfinishtaskMapper;
-import rpg.data.dao.UserfriendMapper;
 import rpg.data.dao.UseritemMapper;
 import rpg.data.dao.UserlevelMapper;
 import rpg.data.dao.UsertaskprocessMapper;
@@ -26,17 +22,12 @@ import rpg.pojo.AccountExample;
 import rpg.pojo.AccountExample.Criteria;
 import rpg.pojo.MarketItem;
 import rpg.pojo.MarketItemExample;
-import rpg.xmlparse.TaskXmlParse;
-import rpg.pojo.Task;
-import rpg.pojo.TaskProcess;
 import rpg.pojo.User;
 import rpg.pojo.UserAttribute;
 import rpg.pojo.Userbag;
 import rpg.pojo.UserbagExample;
 import rpg.pojo.Userfinishtask;
 import rpg.pojo.UserfinishtaskExample;
-import rpg.pojo.Userfriend;
-import rpg.pojo.UserfriendExample;
 import rpg.pojo.Useritem;
 import rpg.pojo.UseritemExample;
 import rpg.pojo.Userlevel;
@@ -64,8 +55,6 @@ public class Login {
 	private UserbagMapper userbagMapper;
 	@Autowired
 	private UserzbMapper userzbMapper;
-	@Autowired
-	private TaskXmlParse taskXmlParse;
 	@Autowired
 	private UserlevelMapper userlevelMapper;
 	@Autowired
@@ -121,7 +110,7 @@ public class Login {
 		attribute.setAck(userlevel.getAck());
 		attribute.setDef(userlevel.getDef());
 		user.setUserAttribute(attribute);
-		//初始化组队资源
+		// 初始化组队资源
 		ArrayList<String> applyList = new ArrayList<String>();
 		GroupCache.getInstance().getUserApplyCache().put(nickname, applyList);
 		// 加载交易行信息
@@ -146,7 +135,7 @@ public class Login {
 		List<Usertaskprocess> usertaskprocesseList = usertaskprocessMapper.selectByExample(usertaskprocessExample);
 		Map<Integer, Usertaskprocess> doingTask = new ConcurrentHashMap<Integer, Usertaskprocess>(500);
 		for (Usertaskprocess usertaskprocess : usertaskprocesseList) {
-			doingTask.put(usertaskprocess.getTaskid(),usertaskprocess);
+			doingTask.put(usertaskprocess.getTaskid(), usertaskprocess);
 		}
 		user.setDoingTask(doingTask);
 		UserfinishtaskExample userfinishtaskExample = new UserfinishtaskExample();
@@ -158,5 +147,7 @@ public class Login {
 			finishTask.put(userfinishtask.getTaskid(), userfinishtask);
 		}
 		user.setFinishTask(finishTask);
+		user.setDrawNum(0);
+		user.setWinNum(0);
 	}
 }

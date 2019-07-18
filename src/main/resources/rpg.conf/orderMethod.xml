@@ -449,4 +449,18 @@
 		<method>changeSkill</method>
 		<status>1</status>
 	</orderMethod>
+
+	<orderMethod>
+		<order>showdraw</order>
+		<className>drawDispatch</className>
+		<method>showDraw</method>
+		<status>1</status>
+	</orderMethod>
+
+	<orderMethod>
+		<order>draw</order>
+		<className>drawDispatch</className>
+		<method>Draw</method>
+		<status>1</status>
+	</orderMethod>
 </orderMethods>

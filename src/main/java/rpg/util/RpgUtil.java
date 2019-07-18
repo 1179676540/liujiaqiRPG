@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import io.netty.channel.Channel;
-import rpg.configure.RoleType;
-import rpg.core.ThreadResource;
 import rpg.data.dao.UserMapper;
 import rpg.data.dao.UserbagMapper;
 import rpg.data.dao.UserkeyMapper;
@@ -23,9 +21,9 @@ import rpg.pojo.Userbag;
 import rpg.pojo.Userkey;
 import rpg.pojo.Userlevel;
 import rpg.pojo.UserlevelExample;
+import rpg.pojo.UserlevelExample.Criteria;
 import rpg.pojo.Yaopin;
 import rpg.pojo.Zb;
-import rpg.pojo.UserlevelExample.Criteria;
 import rpg.service.task.TaskManage;
 import rpg.xmlparse.LevelXmlParse;
 import rpg.xmlparse.YaopinXmlParse;
@@ -62,7 +60,7 @@ public class RpgUtil {
 	 * 
 	 * @param user
 	 */
-	public  void putZb(User user, Zb zb) {
+	public void putZb(User user, Zb zb) {
 		List<Userbag> list = user.getUserbags();
 		Userbag userbag = new Userbag();
 		userbag.setId(UUID.randomUUID().toString());

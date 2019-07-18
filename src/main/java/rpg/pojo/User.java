@@ -38,6 +38,10 @@ public class User {
 	
 	private ConcurrentHashMap<Integer, Long> buffStartTime;
 	
+	private Integer drawNum;
+	
+	private Integer winNum;
+	
 	/**
 	 * 1退出，0正常
 	 */
@@ -300,6 +304,34 @@ public class User {
 	 */
 	public void setBuffStartTime(ConcurrentHashMap<Integer, Long> buffStartTime) {
 		this.buffStartTime = buffStartTime;
+	}
+
+	/**
+	 * @return the drawNum
+	 */
+	public Integer getDrawNum() {
+		return drawNum;
+	}
+
+	/**
+	 * @param drawNum the drawNum to set
+	 */
+	public void setDrawNum(Integer drawNum) {
+		this.drawNum = drawNum;
+	}
+
+	/**
+	 * @return the winNum
+	 */
+	public Integer getWinNum() {
+		return winNum;
+	}
+
+	/**
+	 * @param winNum the winNum to set
+	 */
+	public void setWinNum(Integer winNum) {
+		this.winNum = winNum;
 	}
 	
 }

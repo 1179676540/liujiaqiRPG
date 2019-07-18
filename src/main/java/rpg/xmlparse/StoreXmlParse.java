@@ -56,8 +56,6 @@ public class StoreXmlParse implements XmlParse {
 					Zb zb2 = zbXmlParse.getZbById(Integer.valueOf(zb));
 					zbMap.put(zb2.getId(), zb2);
 				}
-//				IOsession.STORE_SYSTEM.setYaopinMap(yaopinMap);
-//				IOsession.STORE_SYSTEM.setZbMap(zbMap);
 				store.setYaopinMap(yaopinMap);
 				store.setZbMap(zbMap);
 			}
