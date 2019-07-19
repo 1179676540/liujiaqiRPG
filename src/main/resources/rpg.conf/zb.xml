@@ -46,4 +46,13 @@
 		<price>10000</price>
 		<njd>200</njd>
 	</zb>
+	<zb>
+		<id>106</id>
+		<level>8</level>
+		<name>荒古遗尘太刀</name>
+		<type>1</type>
+		<attribute>2000</attribute>
+		<price>100000</price>
+		<njd>200</njd>
+	</zb>
 </zbList>

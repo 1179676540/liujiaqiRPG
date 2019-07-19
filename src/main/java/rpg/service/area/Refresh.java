@@ -166,13 +166,13 @@ public class Refresh implements Runnable {
 				user3.getAndAddHp(user3, buff.getMp());
 				if (!user3.getNickname().equals(user.getNickname())) {
 					Channel channel1 = AllOnlineUser.userchMap.get(user3);
-					Builder builder = ServerRespPacket.UserBufResp.newBuilder();
+					ServerRespPacket.Resp.Builder builder = ServerRespPacket.Resp.newBuilder();
 					builder.setData(user.getNickname() + "对你使用了"
 							+ skill.getName() + "血量恢复" + buff.getMp()
 							+ "-剩余血量" + user3.getHp());
 					SendMsg.send(builder.build(), channel1);
 				} else {
-					Builder builder = ServerRespPacket.UserBufResp.newBuilder();
+					ServerRespPacket.Resp.Builder builder = ServerRespPacket.Resp.newBuilder();
 					builder.setData("使用了" + skill.getName() + "-蓝量消耗"
 							+ skill.getMp() + "-剩余" + user.getMp() + "\n"
 							+ "血量恢复" + buff.getMp() + "-剩余血量"

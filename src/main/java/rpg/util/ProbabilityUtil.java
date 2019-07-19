@@ -22,7 +22,7 @@ public class ProbabilityUtil {
 	}
 
 	public ProbabilityUtil(List<Double> prob, Random rand) {
-		/* Begin by doing basic structural checks on the inputs. */
+		//对输入进行检查
 		if (prob == null || rand == null)
 			throw new NullPointerException();
 		if (prob.size() == 0)
@@ -37,9 +37,9 @@ public class ProbabilityUtil {
 		Deque<Integer> small = new ArrayDeque<Integer>();
 		Deque<Integer> large = new ArrayDeque<Integer>();
 
-		/* divide elements into 2 groups by probability */
+		//按概率将元素分成两组
 		for (int i = 0; i < length; i++) {
-			probtemp[i] = prob.get(i) * length; /* initial probtemp */
+			probtemp[i] = prob.get(i) * length; 
 			if (probtemp[i] < 1.0)
 				small.add(i);
 			else
@@ -57,10 +57,8 @@ public class ProbabilityUtil {
 			else
 				large.add(more);
 		}
-		/*
-		 * At this point, everything is in one list, which means that the remaining
-		 * probabilities should all be 1/n. Based on this, set them appropriately.
-		 */
+
+		//所有的事情都在一个列表中，这意味着剩余的概率都应该是1/N。基于此，适当地设置它们。
 		while (!small.isEmpty())
 			probability[small.pop()] = 1.0;
 		while (!large.isEmpty())
@@ -72,13 +70,10 @@ public class ProbabilityUtil {
 	 * 
 	 */
 	public int next() {
-		/* Generate a fair die roll to determine which column to inspect. */
 		int column = rand.nextInt(length);
-
-		/* Generate a biased coin toss to determine which option to pick. */
+		//进行选择选项
 		boolean coinToss = rand.nextDouble() < probability[column];
-
-		/* Based on the outcome, return either the column or its alias. */
+		//根据结果，返回
 		return coinToss ? column : alias[column];
 	}
 }

@@ -28,7 +28,6 @@ public class RegistDispatch {
 
 	public void registDispatch(Channel ch, String arg1, SocketAddress address) {
 		String[] msg = arg1.split("\\s+");
-		Integer roleid = Integer.valueOf(msg[4]);
 		if (msg.length <= MAX_MSG_LENGTH) {
 			Builder builder = ServerRespPacket.Resp.newBuilder();
 			builder.setData(MsgResp.ORDER_ERR);
@@ -36,6 +35,7 @@ public class RegistDispatch {
 			return;
 		}
 		
+		Integer roleid = Integer.valueOf(msg[4]);
 		if (roleid >= MAX_ROLE_ID || roleid <= MIN_ROLE_ID) {
 			Builder builder = ServerRespPacket.Resp.newBuilder();
 			builder.setData(MsgResp.ROLECHECK_ERR);
